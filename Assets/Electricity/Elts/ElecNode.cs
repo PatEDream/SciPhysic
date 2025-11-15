@@ -27,13 +27,9 @@ public class ElecNode : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        // petit point repère
-        Gizmos.color = Color.yellow;
-        float sphereRadius = 0.05f;
-        Gizmos.DrawSphere(transform.position, sphereRadius);
-
 #if UNITY_EDITOR
         // label au-dessus du node : "V: <valeur>" avec 2 décimales
+        float sphereRadius = 0.05f;
         Vector3 labelPos = transform.position + Vector3.up * (sphereRadius + 0.12f);
         GUIStyle style = new GUIStyle();
         style.normal.textColor = Color.white;
