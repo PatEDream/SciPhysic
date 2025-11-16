@@ -10,11 +10,21 @@ public class ElecDipole : MonoBehaviour
 
     protected void Start()
     {
-        ElecManager.instance.dipoles.Add(this);
+        Init();
     }
+
+    virtual public void Init()
+    {
+    }
+
+    virtual public string GetName()
+    {
+        return gameObject.name;
+    }
+
     virtual public bool IsConnected()
     {
-        return sta!=null && end != null;
+        return sta != null && end != null;
     }
 
     virtual public float GetVoltage()
@@ -52,11 +62,11 @@ public class ElecDipole : MonoBehaviour
 #if UNITY_EDITOR
         // label au-dessus du node : "V: <valeur>" avec 2 décimales
         float sphereRadius = 0.15f;
-        Vector3 labelPos = transform.position + Vector3.up * (sphereRadius + 0.12f);
+        Vector3 labelPos = transform.position + Vector3.up * (sphereRadius + 0.0f);
         GUIStyle style = new GUIStyle();
         style.normal.textColor = Color.yellow;
         style.alignment = TextAnchor.MiddleCenter;
-        Handles.Label(labelPos, $"I: {intensity:F2}", style);
+        Handles.Label(labelPos, $"{GetName()}\nI: {intensity:F2}\nV: {GetVoltage():F2}", style);
 #endif
     }
 

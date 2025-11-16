@@ -9,7 +9,6 @@ public class ElecNode : MonoBehaviour
 
     private void Start()
     {
-        ElecManager.instance.nodes.Add(this);
         Init();
     }
     public void Init()
@@ -18,7 +17,7 @@ public class ElecNode : MonoBehaviour
         deltaPotential = 0.0f;
     }
 
-    public void UpdatePotential()
+    virtual public void UpdatePotential()
     {
         potential += deltaPotential;
         deltaPotential = 0.0f;
@@ -34,7 +33,7 @@ public class ElecNode : MonoBehaviour
         GUIStyle style = new GUIStyle();
         style.normal.textColor = Color.white;
         style.alignment = TextAnchor.MiddleCenter;
-        Handles.Label(labelPos, $"V: {potential:F2}", style);
+        Handles.Label(labelPos, $"{gameObject.name}\nP: {potential:F2}", style);
 #endif
     }
 }

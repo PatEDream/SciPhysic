@@ -5,6 +5,16 @@ public class ElecSwitch : ElecDipole
     public bool isOpen = true;
 
 
+    override public void Init()
+    {
+        name = "Switch";
+    }
+
+    override public string GetName()
+    {
+        return isOpen? "open" : "closed";
+    }
+
     override public void ComputeIntensity()
     {
         if (isOpen)
@@ -17,6 +27,10 @@ public class ElecSwitch : ElecDipole
         }
     }
 
-
+    void OnMouseDown()
+    {
+        isOpen = !isOpen;
+        Debug.Log($"{name} isOpen => {isOpen}");
+    }
 
 }
