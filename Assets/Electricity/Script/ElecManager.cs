@@ -5,8 +5,8 @@ using UnityEngine;
 public class ElecManager : MonoBehaviour
 {
     public static ElecManager instance;
-    public static float conductanceWire = 100f;
-    public static float intensityToPotentialEffect = 0.001f;
+    public static double conductanceWire = 100f;
+    public static double intensityToPotentialEffect = 0.001f;
 
 
 

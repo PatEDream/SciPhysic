@@ -6,7 +6,7 @@ public class ElecDipole : MonoBehaviour
     public ElecNode sta = new ElecNode();
     public ElecNode end = new ElecNode();
 
-    public float intensity = 0.0f;
+    public double intensity = 0.0f;
 
     protected void Start()
     {
@@ -27,7 +27,7 @@ public class ElecDipole : MonoBehaviour
         return sta != null && end != null;
     }
 
-    virtual public float GetVoltage()
+    virtual public double GetVoltage()
     {
         return sta.potential - end.potential;
     }
@@ -50,7 +50,7 @@ public class ElecDipole : MonoBehaviour
 
 
     // Dessine en rouge une ligne Gizmo entre la position du dipôle (this.transform) et la position du node `sta`.
-    void OnDrawGizmos()
+    virtual protected void OnDrawGizmos()
     {
         if (sta == null) return;
         Gizmos.color = Color.red;
@@ -60,9 +60,7 @@ public class ElecDipole : MonoBehaviour
         Gizmos.DrawLine(transform.position, end.transform.position);
 
 #if UNITY_EDITOR
-        // label au-dessus du node : "V: <valeur>" avec 2 décimales
-        float sphereRadius = 0.15f;
-        Vector3 labelPos = transform.position + Vector3.up * (sphereRadius + 0.0f);
+        Vector3 labelPos = transform.position + Vector3.up * 0.15f;
         GUIStyle style = new GUIStyle();
         style.normal.textColor = Color.yellow;
         style.alignment = TextAnchor.MiddleCenter;

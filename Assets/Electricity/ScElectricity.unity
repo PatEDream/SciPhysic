@@ -657,7 +657,7 @@ Transform:
   m_GameObject: {fileID: 57118512}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3541,7 +3541,7 @@ MonoBehaviour:
   isRunning: 0
   dipoles: []
   nodes: []
-  nbPass: 10000
+  nbPass: 1000
 --- !u!4 &1214314623
 Transform:
   m_ObjectHideFlags: 0
@@ -3551,7 +3551,7 @@ Transform:
   m_GameObject: {fileID: 1214314621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4893,7 +4893,7 @@ Transform:
   m_GameObject: {fileID: 2092246188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

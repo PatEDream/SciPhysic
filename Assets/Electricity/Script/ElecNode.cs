@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ElecNode : MonoBehaviour
 {
-    public float potential = 0.0f;
-    public float deltaPotential = 0.0f;
+    public double potential = 0.0f;
+    public double deltaPotential = 0.0f;
 
     private void Start()
     {

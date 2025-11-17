@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ElecBattery : ElecDipole
 {
-    public float Voltage = 5.0f;
+    public double Voltage = 5.0f;
     override public void Init()
     {
         sta.potential = Voltage * 0.5f;
@@ -13,7 +13,7 @@ public class ElecBattery : ElecDipole
     {
         intensity = GetVoltage() * ElecManager.conductanceWire;
 
-        float v = GetVoltage();
+        double v = GetVoltage();
         sta.deltaPotential += (Voltage - v) * 0.5f;
         end.deltaPotential += (v - Voltage) * 0.5f;
     }
