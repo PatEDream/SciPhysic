@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class ElecDipole : MonoBehaviour
@@ -59,14 +61,17 @@ public class ElecDipole : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, end.transform.position);
 
-#if UNITY_EDITOR
-        Vector3 labelPos = transform.position + Vector3.up * 0.15f;
+        //#if UNITY_EDITOR
+        Vector3 labelPos = transform.position + Vector3.up * 0.15f;// - Vector3.forward * 3.0f;
         GUIStyle style = new GUIStyle();
         style.normal.textColor = Color.yellow;
         style.alignment = TextAnchor.MiddleCenter;
+        style.fontSize = 14;
         Handles.Label(labelPos, $"{GetName()}\nI: {intensity:F2}\nV: {GetVoltage():F2}", style);
-#endif
+//#endif
     }
+
+    
 
 
 }
