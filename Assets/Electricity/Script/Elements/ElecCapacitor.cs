@@ -15,12 +15,12 @@ public class ElecCapacitor : ElecDipole
     }
     override public void ComputeIntensity()
     {
-        double voltage = GetVoltage();
+        double voltage = ComputeVoltage();
         double voltageInterne = storedCharge / capacitance;
         double diff = voltage - voltageInterne;
 
-        intensity = capacitance * diff;
-        storedCharge += intensity * ElecManager.intensityToPotentialEffect;
+        intensity = (capacitance * diff)/ ElecManager.intensityToPotentialEffect;
+        storedCharge += intensity;
     }
 
     override public void ComputeDeltaPotential()

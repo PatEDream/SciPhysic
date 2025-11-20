@@ -23,7 +23,7 @@ public class ElecSwitch : ElecDipole
         }
         else
         {
-            intensity = GetVoltage() * ElecManager.conductanceWire;
+            intensity = ComputeVoltage() * ElecManager.conductanceWire;
         }
     }
 

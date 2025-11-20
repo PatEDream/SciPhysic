@@ -17,6 +17,6 @@ public class ElecWire : ElecDipole
 
     override public void ComputeIntensity()
     {
-        intensity = GetVoltage() * ElecManager.conductanceWire;
+        intensity = ComputeVoltage() * ElecManager.conductanceWire;
     }
 }

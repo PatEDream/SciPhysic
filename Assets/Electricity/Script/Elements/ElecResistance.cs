@@ -7,7 +7,7 @@ public class ElecResistance : ElecDipole
     {
         if (IsConnected())
         {
-            double tension = GetVoltage();
+            double tension = ComputeVoltage();
             intensity = tension / ohm;
         }
     }

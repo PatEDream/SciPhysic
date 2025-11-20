@@ -29,7 +29,7 @@ public class ElecDipole : MonoBehaviour
         return sta != null && end != null;
     }
 
-    virtual public double GetVoltage()
+    virtual public double ComputeVoltage()
     {
         return sta.potential - end.potential;
     }
@@ -66,9 +66,8 @@ public class ElecDipole : MonoBehaviour
         GUIStyle style = new GUIStyle();
         style.normal.textColor = Color.yellow;
         style.alignment = TextAnchor.MiddleCenter;
-        style.fontSize = 14;
-        Handles.Label(labelPos, $"{GetName()}\nI: {intensity:F2}\nV: {GetVoltage():F2}", style);
-//#endif
+        Handles.Label(labelPos, $"{GetName()}\nI: {intensity:F2}\nV: {ComputeVoltage():F2}", style);
+#endif
     }
 
     

@@ -11,10 +11,13 @@ public class ElecBattery : ElecDipole
 
     override public void ComputeDeltaPotential()
     {
-        intensity = GetVoltage() * ElecManager.conductanceWire;
+        //intensity = ComputeVoltage() * ElecManager.conductanceWire;
 
-        double v = GetVoltage();
+        double v = ComputeVoltage();
         sta.deltaPotential += (Voltage - v) * 0.5f;
         end.deltaPotential += (v - Voltage) * 0.5f;
+
+        intensity = (Voltage - v)*0.5f / ElecManager.intensityToPotentialEffect;
+
     }
 }
